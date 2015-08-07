@@ -88,17 +88,14 @@ rfFit &lt;- train(classe~ .,data=activity_train,method = &quot;rf&quot;,trContro
 <p>Looking at the results from cross-validation, the accuracy is at least 99.3% so we expect the out-of-sample error rate to be less than 0.7%.</p>
 <pre class="r"><code>rfFit$resample</code></pre>
 <pre><code>##    Accuracy     Kappa Resample
-## 1 0.9936322 0.9919452    Fold1
-## 2 0.9964340 0.9954894    Fold3
-## 3 0.9943920 0.9929065    Fold2
-## 4 0.9936290 0.9919416    Fold5
-## 5 0.9938822 0.9922601    Fold4</code></pre>
+## 1 0.9931193 0.9912949    Fold1
+## 2 0.9938838 0.9922625    Fold2
+## 3 0.9969427 0.9961326    Fold5
+## 4 0.9946497 0.9932320    Fold4
+## 5 0.9954128 0.9941979    Fold3</code></pre>
 <p>We use the chosen model to make predictions for the test set and show the predictions below.</p>
-<pre class="r"><code>pred_test &lt;- predict(rfFit, activity_test)</code></pre>
-<pre><code>## Loading required package: randomForest
-## randomForest 4.6-10
-## Type rfNews() to see new features/changes/bug fixes.</code></pre>
-<pre class="r"><code>pred_test </code></pre>
+<pre class="r"><code>pred_test &lt;- predict(rfFit, activity_test)
+pred_test </code></pre>
 <pre><code>##  [1] B A B A A E D B A A B C B A E E A B B B
 ## Levels: A B C D E</code></pre>
 <pre class="r"><code>pml_write_files = function(x){
